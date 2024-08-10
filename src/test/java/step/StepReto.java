@@ -9,9 +9,9 @@ import webpage.parabankPage;
 import de.svenjacobs.loremipsum.LoremIpsum;
 import java.util.Random;
 
-public class StepReto {
+public class StepReto extends parabankPage{
     @Steps
-    parabankPage pageBank;
+    parabankPage pageBank=new parabankPage();
     private WebDriver driver;
     private LoremIpsum loremIpsum= new LoremIpsum();
     Random rand = new Random();

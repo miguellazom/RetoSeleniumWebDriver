@@ -1,19 +1,18 @@
 package stepdefinition;
 
-import cucumber.api.PendingException;
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
-import cucumber.api.java.es.Cuando;
-import cucumber.api.java.es.Dado;
-import cucumber.api.java.es.Entonces;
+import io.cucumber.java.Before;
+import io.cucumber.java.After;
+import io.cucumber.java.es.Cuando;
+import io.cucumber.java.es.Dado;
+import io.cucumber.java.es.Entonces;
 import net.thucydides.core.annotations.Steps;
 import org.openqa.selenium.WebDriver;
 import step.StepReto;
 
-public class RetoStepDefinition
+public class RetoStepDefinition extends StepReto
 {
     @Steps
-    StepReto stepReto;
+    StepReto stepReto=new StepReto();
     private WebDriver driver;
 
     @Before

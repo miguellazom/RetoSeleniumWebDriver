@@ -1,17 +1,20 @@
 package runner;
-import cucumber.api.CucumberOptions;
-import cucumber.api.junit.Cucumber;
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
-import net.serenitybdd.cucumber.CucumberWithSerenity;
-
-
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/resources/features/reto.feature",
         glue = "stepdefinition",
         tags = "@Reto",
-        plugin = {"html:target/build/cucumber.html"}
+        plugin = {
+                "pretty",
+                "html:target/cucumber-reports/cucumber.html",
+                "json:target/cucumber-reports/cucumber.json",
+                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+        },
+        monochrome = true
 )
 public class RunnerTest {
 
